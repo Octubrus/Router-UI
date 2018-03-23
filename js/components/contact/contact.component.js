@@ -1,6 +1,13 @@
 var contact = {
     template: `
-        <div>Contact</div>
+        <div>
+            How would you like to contact me?
+            <div>
+                <a href="#!/contact/phone">Phone</a>
+                <a href="#!/contact/email">Email</a>
+            </div>
+            <div ui-view></div>
+        </div>
     `
 };
 
@@ -10,6 +17,7 @@ angular
     .config(function ($stateProvider) {
         $stateProvider
             .state('contact', {
+                redirectTo: 'contact.phone',
                 url: '/contact',
                 component: 'contact'
             })
